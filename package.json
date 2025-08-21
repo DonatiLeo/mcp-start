@@ -4,7 +4,9 @@
      "weather": "./build/index.js"
    },
    "scripts": {
-     "build": "tsc && node build/index.js"
+     "build": "tsc && node build/index.js",
+     "inspect": "npx @modelcontextprotocol/inspector node build/index.js"
+
    },
    "files": [
      "build"
