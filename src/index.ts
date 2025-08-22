@@ -61,13 +61,28 @@ server.tool(
   }
 );
 
+// Add a dynamic greeting resource
 server.resource(
-  "greeting",
-  new ResourceTemplate("greeting://{name}", { list: undefined }),
-  async (uri, { name }) => ({
+  "file",
+  new ResourceTemplate("file://{path}", { list: undefined }),
+  async (uri, { path }) => ({
     contents: [{
       uri: uri.href,
-      text: `Hello, ${name}!`
+      text: `File, ${path}!`
+    }]
+  })
+);
+
+server.prompt(
+  "review-code",
+  { code: z.string() },
+  ({ code }) => ({
+    messages: [{
+      role: "user",
+      content: {
+        type: "text",
+        text: `Please review this code:\n\n${code}`
+      }
     }]
   })
 );
