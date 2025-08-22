@@ -42,7 +42,7 @@ for(let template of templates.resourceTemplates) {
 
 // Call a tool
 const result = await client.callTool({
-  name: "add",
+  name: "divide",
   arguments: {
     a: 1,
     b: 8
