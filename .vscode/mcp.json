@@ -1,11 +1,18 @@
 {
-    "inputs": [],
-    "servers": {
-       "hello-mcp": {
-           "command": "node",
-           "args": [
-               "build/index.js"
-           ]
-       }
-    }
+	"servers": {
+		"hello-mcp": {
+			"command": "node",
+			"args": [
+				"build/index.js"
+			],
+			"type": "stdio"
+		},
+		"demo-mcp": {
+			"command": "node",
+			"args": [
+				"build/index.js"
+			],
+			"type": "stdio"
+		}
+	}
 }
